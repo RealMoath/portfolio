@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl" id="html-tag">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>معاذ | Backend Engineer</title>
+    <title>Moath | Backend Engineer</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
     
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -19,10 +19,10 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Tajawal', 'sans-serif'],
+                        sans: ['Inter', 'sans-serif'],
                         mono: ['"Fira Code"', 'monospace'],
                     },
-                    colors: { dark: '#050505', light: '#f8f8f8', grayish: '#111111', primary: '#3b82f6', meta_blue: '#2162f2' }
+                    colors: { dark: '#050505', light: '#f8f8f8', primary: '#3b82f6', meta_blue: '#2162f2' }
                 }
             }
         }
@@ -53,12 +53,9 @@
 
         .glass-nav { background: rgba(10, 10, 10, 0.4); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
         
-        .marquee-container { overflow: hidden; white-space: nowrap; display: flex; direction: ltr; }
+        .marquee-container { overflow: hidden; white-space: nowrap; display: flex; }
         .marquee-content { display: flex; gap: 4rem; animation: marquee 25s linear infinite; }
         @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-
-        [dir="ltr"] .text-right-to-left { text-align: left; }
-        [dir="rtl"] .text-right-to-left { text-align: right; }
 
         .contact-icon { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
         .contact-icon:hover { transform: scale(1.1) translateY(-5px); background: white; color: black; }
@@ -70,52 +67,51 @@
 
     <div class="custom-cursor" id="cursor"></div>
 
-    <nav class="fixed top-6 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl glass-nav border border-white/10 rounded-full px-2 py-2 flex justify-between items-center z-50 shadow-2xl" id="navbar">
-        <div class="flex items-center gap-3">
-            <a href="#contact" class="bg-white text-black px-6 py-2.5 rounded-full font-bold text-[13px] hover:bg-gray-200 transition transform hover:scale-105 cursor-hover flex items-center gap-2">
-                <span class="font-mono text-[10px] opacity-70">init()</span> <span data-key="nav-contact">تواصل معي</span>
-            </a>
-            <button onclick="toggleLanguage()" class="hidden sm:block text-gray-500 hover:text-white font-mono text-[10px] px-3 transition cursor-hover">
-                [ <span id="lang-btn-text">EN</span> ]
-            </button>
-        </div>
-        <ul class="hidden md:flex items-center gap-10 text-[12px] font-medium text-gray-400">
-            <li><a href="#home" data-key="nav-home" class="hover:text-white transition cursor-hover text-nowrap">الرئيسية</a></li>
-            <li><a href="#about" data-key="nav-about" class="hover:text-white transition cursor-hover text-nowrap">عن معاذ</a></li>
-            <li><a href="#skills" data-key="nav-skills" class="hover:text-white transition cursor-hover text-nowrap">المهارات</a></li>
-            <li><a href="#projects" data-key="nav-projects" class="hover:text-white transition cursor-hover text-nowrap">المشاريع</a></li>
-        </ul>
+    <nav class="fixed top-6 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl glass-nav border border-white/10 rounded-full px-2 py-2 flex justify-between items-center z-50">
         <div class="flex items-center gap-1 cursor-hover font-mono font-bold text-lg tracking-wider px-4">
             <span class="text-gray-500">&lt;/</span><span class="uppercase">MOATH</span><span class="text-gray-500">&gt;</span>
+        </div>
+
+        <ul class="hidden md:flex items-center gap-10 text-[12px] font-medium text-gray-400 uppercase tracking-widest">
+            <li><a href="#home" class="hover:text-white transition cursor-hover">Home</a></li>
+            <li><a href="#about" class="hover:text-white transition cursor-hover">About</a></li>
+            <li><a href="#skills" class="hover:text-white transition cursor-hover">Skills</a></li>
+            <li><a href="#projects" class="hover:text-white transition cursor-hover">Projects</a></li>
+        </ul>
+
+        <div class="flex items-center">
+            <a href="#contact" class="bg-white text-black px-6 py-2.5 rounded-full font-bold text-[13px] hover:bg-gray-200 transition transform hover:scale-105 cursor-hover flex items-center gap-2">
+                <span class="font-mono text-[10px] opacity-70">init()</span> Contact
+            </a>
         </div>
     </nav>
 
     <section id="home" class="relative h-screen flex items-center justify-center bg-grid overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-b from-transparent via-dark/50 to-dark"></div>
-        <div class="relative z-10 text-center px-4 mt-16">
+        <div class="relative z-10 text-center px-4">
             <div class="inline-block px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-8 hero-title opacity-0 translate-y-10">
                 <p class="font-mono text-[11px] text-gray-300">📍 Computer Science @ UOH</p>
             </div>
-            <h1 class="text-5xl md:text-8xl font-black mb-6 leading-tight hero-title opacity-0 translate-y-10" data-key="hero-title">
-                صياغة المستقبل، <br>
-                <span class="text-outline font-mono uppercase tracking-widest">LINE BY LINE.</span>
+            <h1 class="text-5xl md:text-8xl font-black mb-6 leading-tight hero-title opacity-0 translate-y-10">
+                Crafting the Future, <br>
+                <span class="text-outline font-mono uppercase tracking-widest">Line by Line.</span>
             </h1>
-            <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-12 hero-subtitle opacity-0 translate-y-10" data-key="hero-desc">
-                أنا معاذ، طالب علوم حاسب في جامعة حائل ومطور باكيند. أدمج بين المنطق الخوارزمي الدقيق والتصميم العصري.
+            <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-12 hero-subtitle opacity-0 translate-y-10">
+                I'm Moath, a Computer Science student at UOH and a Backend Developer. I blend algorithmic logic with modern design to build scalable systems.
             </p>
         </div>
     </section>
 
     <section id="about" class="py-32 px-6 md:px-12 bg-light text-dark rounded-t-[3rem] relative z-20">
-        <div class="max-w-5xl mx-auto text-right-to-left gsap-fade-up">
+        <div class="max-w-5xl mx-auto gsap-fade-up">
             <p class="font-mono text-xs text-gray-400 mb-6 uppercase tracking-widest">// Identity.py</p>
-            <h2 class="text-4xl md:text-7xl font-black mb-10 leading-tight" data-key="about-title">المنطق البرمجي، <br><span class="text-gray-400">برؤية هندسية.</span></h2>
+            <h2 class="text-4xl md:text-7xl font-black mb-10 leading-tight">Engineering Logic, <br><span class="text-gray-400">with Vision.</span></h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <p class="text-xl text-gray-700 leading-relaxed font-medium" data-key="about-text-1">
-                    بصفتي طالباً في كلية علوم الحاسب بجامعة حائل، تعلمت أن البرمجة هي هندسة لحل المشكلات المعقدة. أسعى دائماً لكتابة كود نظيف وبناء أنظمة قابلة للتوسع.
+                <p class="text-xl text-gray-700 leading-relaxed font-medium">
+                    As a CS student, I believe programming is more than just writing code—it's engineering solutions for complex problems. I strive for clean code and scalable architecture.
                 </p>
-                <p class="text-xl text-gray-700 leading-relaxed font-medium" data-key="about-text-2">
-                    أعشق التحديات الخوارزمية، وأهتم بأدق التفاصيل في العمليات الخلفية لضمان أن ما أبنيه فعال وآمن.
+                <p class="text-xl text-gray-700 leading-relaxed font-medium">
+                    I love algorithmic challenges and backend optimization, ensuring every system I build is efficient, secure, and ready for production.
                 </p>
             </div>
         </div>
@@ -123,22 +119,22 @@
 
     <section id="skills" class="py-32 px-6 md:px-12 bg-[#f1f1f1] text-dark relative z-20">
         <div class="max-w-6xl mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-16 text-right-to-left gsap-fade-up">
-                <h2 class="text-4xl md:text-6xl font-black" data-key="nav-skills">الترسانة التقنية</h2>
-                <p class="font-mono text-gray-400 mt-4 md:mt-0 italic tracking-widest">stack.json</p>
+            <div class="flex justify-between items-end mb-16 gsap-fade-up">
+                <h2 class="text-4xl md:text-6xl font-black uppercase">Tech Stack</h2>
+                <p class="font-mono text-gray-400 italic tracking-widest hidden md:block">stack.json</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 gsap-fade-up">
-                <div class="bg-white p-8 rounded-3xl shadow-sm border border-transparent hover:border-primary transition cursor-hover text-right-to-left">
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-transparent hover:border-primary transition cursor-hover">
                     <h3 class="text-xl font-bold mb-4">Backend</h3>
                     <p class="text-gray-500 text-sm font-medium">Python, Django, DRF, Node.js</p>
                 </div>
-                <div class="bg-white p-8 rounded-3xl shadow-sm border border-transparent hover:border-primary transition cursor-hover text-right-to-left">
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-transparent hover:border-primary transition cursor-hover">
                     <h3 class="text-xl font-bold mb-4">Database</h3>
                     <p class="text-gray-500 text-sm font-medium">PostgreSQL, SQLite, MySQL</p>
                 </div>
-                <div class="bg-white p-8 rounded-3xl shadow-sm border border-transparent hover:border-primary transition cursor-hover text-right-to-left">
-                    <h3 class="text-xl font-bold mb-4">Core CS</h3>
-                    <p class="text-gray-500 text-sm font-medium">Algorithms, OOP, JWT Auth</p>
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-transparent hover:border-primary transition cursor-hover">
+                    <h3 class="text-xl font-bold mb-4">Infrastructure</h3>
+                    <p class="text-gray-500 text-sm font-medium">Algorithms, Git, JWT Auth, Docker</p>
                 </div>
             </div>
         </div>
@@ -146,21 +142,18 @@
 
     <section id="certs" class="py-32 px-6 md:px-12 bg-white text-dark relative z-20">
         <div class="max-w-6xl mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-12 text-right-to-left gsap-fade-up">
-                <h2 class="text-4xl md:text-5xl font-black" data-key="cert-title">الشهادات والاعتمادات</h2>
-                <p class="font-mono text-gray-400 mt-2 italic tracking-widest">verify_certs.py</p>
-            </div>
+            <h2 class="text-4xl md:text-5xl font-black mb-12 gsap-fade-up">Certifications</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 gsap-fade-up">
                 <div class="flex items-center justify-between p-8 rounded-[2.5rem] bg-[#fcfcfc] border border-gray-100 shadow-sm hover:shadow-md transition cursor-hover">
-                    <div class="text-right-to-left">
-                        <h3 class="text-2xl md:text-3xl font-extrabold mb-2 text-dark">Meta Backend Developer</h3>
+                    <div>
+                        <h3 class="text-2xl font-extrabold mb-2 text-dark">Meta Backend Developer</h3>
                         <p class="text-gray-400 text-lg mb-4">Professional Certificate - Coursera</p>
                         <div class="flex items-center gap-2 text-meta_blue font-medium">
                             <span>✓</span> <span class="text-sm">Status: Verified</span>
                         </div>
                     </div>
-                    <div class="w-20 h-20 md:w-24 md:h-24 bg-meta_blue rounded-[1.5rem] flex items-center justify-center p-4 shadow-lg">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg" alt="Meta Logo" class="w-full h-full object-contain brightness-0 invert">
+                    <div class="w-20 h-20 bg-meta_blue rounded-[1.5rem] flex items-center justify-center p-4 shadow-lg">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg" alt="Meta" class="w-full h-full object-contain brightness-0 invert">
                     </div>
                 </div>
             </div>
@@ -174,18 +167,18 @@
     </div>
 
     <section id="projects" class="py-32 px-6 bg-dark text-white">
-        <div class="max-w-6xl mx-auto text-right-to-left">
-            <h2 class="text-5xl md:text-7xl font-black mb-20 gsap-fade-up" data-key="nav-projects">المشاريع <span class="text-outline font-mono">/ Code</span></h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 text-right-to-left">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-5xl md:text-7xl font-black mb-20 gsap-fade-up uppercase tracking-tighter">Selected <span class="text-outline">Projects</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <div class="bg-grayish p-10 rounded-3xl border border-white/5 hover:border-white/20 transition gsap-fade-up cursor-hover">
-                    <h3 class="text-2xl font-bold mb-4" data-key="p1-title">نظام إدارة أكاديمي</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed mb-8" data-key="p1-desc">بناء نظام API متكامل لإدارة بيانات الطلاب باستخدام Django REST Framework.</p>
-                    <a href="https://github.com/RealMoath" target="_blank" class="text-primary font-mono text-xs underline">VIEW SOURCE</a>
+                    <h3 class="text-2xl font-bold mb-4">Academic System</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-8">Integrated API for student data management built with Django REST Framework.</p>
+                    <a href="https://github.com/RealMoath" target="_blank" class="text-primary font-mono text-xs underline uppercase">View Source</a>
                 </div>
                 <div class="bg-grayish p-10 rounded-3xl border border-white/5 hover:border-white/20 transition gsap-fade-up md:mt-24 cursor-hover">
-                    <h3 class="text-2xl font-bold mb-4" data-key="p2-title">محاكي الخوارزميات</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed mb-8" data-key="p2-desc">تطبيق بلغة بايثون يحاكي خوارزميات البحث المعقدة ويحللها.</p>
-                    <a href="https://github.com/RealMoath" target="_blank" class="text-primary font-mono text-xs underline">VIEW SOURCE</a>
+                    <h3 class="text-2xl font-bold mb-4">Algo Simulator</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-8">Python application simulating and analyzing complex search algorithms.</p>
+                    <a href="https://github.com/RealMoath" target="_blank" class="text-primary font-mono text-xs underline uppercase">View Source</a>
                 </div>
             </div>
         </div>
@@ -193,16 +186,16 @@
 
     <section id="contact" class="py-32 px-6 bg-light text-dark relative z-20">
         <div class="max-w-4xl mx-auto text-center gsap-fade-up">
-            <h2 class="text-5xl md:text-7xl font-black mb-8" data-key="contact-title">لنبدأ العمل معاً</h2>
-            <p class="text-xl text-gray-500 mb-16 max-w-2xl mx-auto font-medium" data-key="contact-desc">أنا متاح دائماً للنقاش حول مشاريع الـ Backend أو فرص التعاون.</p>
-            <div class="flex flex-wrap justify-center gap-8">
-                <a href="https://github.com/RealMoath" target="_blank" class="contact-icon w-20 h-20 border border-dark/10 rounded-2xl flex items-center justify-center cursor-hover">
+            <h2 class="text-5xl md:text-7xl font-black mb-8">Let's Connect</h2>
+            <p class="text-xl text-gray-500 mb-16 max-w-2xl mx-auto font-medium">Available for backend projects and technical collaborations.</p>
+            <div class="flex justify-center gap-8">
+                <a href="https://github.com/RealMoath" target="_blank" class="contact-icon w-16 h-16 border border-dark/10 rounded-2xl flex items-center justify-center cursor-hover">
                     <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                 </a>
-                <a href="https://www.linkedin.com/in/muath-abdullah-" target="_blank" class="contact-icon w-20 h-20 border border-dark/10 rounded-2xl flex items-center justify-center cursor-hover">
+                <a href="https://www.linkedin.com/in/muath-abdullah-" target="_blank" class="contact-icon w-16 h-16 border border-dark/10 rounded-2xl flex items-center justify-center cursor-hover">
                     <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                 </a>
-                <a href="mailto:csmoath@gmail.com" class="contact-icon w-20 h-20 border border-dark/10 rounded-2xl flex items-center justify-center cursor-hover">
+                <a href="mailto:csmoath@gmail.com" class="contact-icon w-16 h-16 border border-dark/10 rounded-2xl flex items-center justify-center cursor-hover">
                     <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                 </a>
             </div>
@@ -211,75 +204,30 @@
 
     <footer class="py-12 text-center bg-dark border-t border-white/5">
         <div class="mb-6 flex justify-center">
-            <div class="stat-badge px-6 py-2 rounded-full font-mono text-xs flex items-center gap-3">
+            <div class="stat-badge px-6 py-2 rounded-full font-mono text-[10px] flex items-center gap-3">
                 <span id="visit-count" class="text-primary font-bold">+50</span>
                 <span class="text-gray-500 uppercase tracking-widest">:VIEWS</span>
             </div>
         </div>
-        <p class="text-gray-600 font-mono text-[10px] uppercase tracking-widest mb-4">status: 200 OK | University of Ha'il</p>
-        <p class="text-gray-400 text-xs" data-key="footer-text">© 2026 معاذ. تم التجميع بنجاح.</p>
+        <p class="text-gray-600 font-mono text-[9px] uppercase tracking-[0.2em]">status: 200 OK | University of Ha'il</p>
     </footer>
 
     <script>
-        const translations = {
-            ar: {
-                "nav-home": "الرئيسية", "nav-about": "عن معاذ", "nav-skills": "المهارات", "nav-projects": "المشاريع", "nav-contact": "تواصل معي",
-                "hero-title": "صياغة المستقبل، <br> <span class='text-outline font-mono uppercase tracking-widest'>LINE BY LINE.</span>",
-                "hero-desc": "أنا معاذ، طالب علوم حاسب في جامعة حائل ومطور باكيند. أدمج بين المنطق الخوارزمي الدقيق والتصميم العصري.",
-                "about-title": "المنطق البرمجي، <br><span class='text-gray-400'>برؤية هندسية.</span>",
-                "about-text-1": "بصفتي طالباً في كلية علوم الحاسب بجامعة حائل، تعلمت أن البرمجة هي هندسة لحل المشكلات المعقدة. أسعى دائماً لكتابة كود نظيف وبناء أنظمة قابلة للتوسع.",
-                "about-text-2": "أعشق التحديات الخوارزمية، وأهتم بأدق التفاصيل في العمليات الخلفية لضمان أن ما أبنيه فعال وآمن.",
-                "cert-title": "الشهادات والاعتمادات",
-                "nav-projects": "المشاريع",
-                "p1-title": "نظام إدارة أكاديمي", "p1-desc": "بناء نظام API متكامل لإدارة بيانات الطلاب باستخدام Django REST Framework.",
-                "p2-title": "محاكي الخوارزميات", "p2-desc": "تطبيق بلغة بايثون يحاكي خوارزميات البحث المعقدة ويحللها.",
-                "contact-title": "لنبدأ العمل معاً", "contact-desc": "أنا متاح دائماً للنقاش حول مشاريع الـ Backend أو فرص التعاون.",
-                "footer-text": "© 2026 معاذ. تم التجميع بنجاح.", "lang-btn": "EN"
-            },
-            en: {
-                "nav-home": "Home", "nav-about": "About", "nav-skills": "Skills", "nav-projects": "Projects", "nav-contact": "Contact",
-                "hero-title": "Crafting the Future, <br> <span class='text-outline font-mono uppercase tracking-widest'>LINE BY LINE.</span>",
-                "hero-desc": "I'm Moath, a CS student at UOH and a Backend Developer. I blend algorithmic logic with modern design.",
-                "about-title": "Core Logic, <br><span class='text-gray-400'>Engineered.</span>",
-                "about-text-1": "As a Computer Science student at UOH, I learned that programming is engineering solutions. I strive for clean code and scalability.",
-                "about-text-2": "I love algorithmic challenges and backend details to ensure efficient and secure builds.",
-                "cert-title": "Certifications",
-                "nav-projects": "Projects",
-                "p1-title": "Academic Management", "p1-desc": "Full API student management built with Django REST Framework.",
-                "p2-title": "Algorithm Simulator", "p2-desc": "Python app simulating complex search algorithms for analysis.",
-                "contact-title": "Let's Work Together", "contact-desc": "I am always available to discuss Backend projects or collaboration.",
-                "footer-text": "© 2026 Moath. Compiled successfully.", "lang-btn": "AR"
-            }
-        };
-
-        let currentLang = 'ar';
-        function toggleLanguage() {
-            currentLang = currentLang === 'ar' ? 'en' : 'ar';
-            const htmlTag = document.getElementById('html-tag');
-            htmlTag.setAttribute('dir', currentLang === 'ar' ? 'rtl' : 'ltr');
-            document.querySelectorAll('[data-key]').forEach(el => {
-                const key = el.getAttribute('data-key');
-                el.innerHTML = translations[currentLang][key];
-            });
-            document.getElementById('lang-btn-text').innerText = translations[currentLang]["lang-btn"];
-            lenis.scrollTo(0, { immediate: true });
-        }
-
-       
-        function initCounter() {
-            let visits = localStorage.getItem('visit_count') || 49;
-            visits = parseInt(visits) + 1;
-            localStorage.setItem('visit_count', visits);
-            
-        
-            document.getElementById('visit-count').innerText = "+" + (visits > 50 ? visits : 50);
-        }
-        initCounter();
-
+        // Smooth Scroll
         const lenis = new Lenis();
         function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
         requestAnimationFrame(raf);
 
+        // Counter Logic
+        function initCounter() {
+            let visits = localStorage.getItem('v_count') || 49;
+            visits = parseInt(visits) + 1;
+            localStorage.setItem('v_count', visits);
+            document.getElementById('visit-count').innerText = "+" + (visits > 50 ? visits : 50);
+        }
+        initCounter();
+
+        // Cursor Logic
         const cursor = document.getElementById('cursor');
         document.addEventListener('mousemove', (e) => {
             gsap.to(cursor, { x: e.clientX, y: e.clientY, duration: 0.1 });
@@ -289,6 +237,7 @@
             el.addEventListener('mouseleave', () => cursor.classList.remove('hovered'));
         });
 
+        // Animations
         gsap.registerPlugin(ScrollTrigger);
         window.onload = () => {
             const tl = gsap.timeline();
